@@ -1,0 +1,63 @@
+# Ignore bundler config.
+/.bundle
+
+# Ignore all logfiles and tempfiles.
+/log/*
+!/log/.keep
+/tmp
+!/tmp/.keep
+
+# Ignore uploaded files in development
+/storage/*
+!/storage/.keep
+
+# Ignore master key for decrypting credentials
+/config/master.key
+/config/credentials.yml.enc
+
+# Ignore environment variables file
+.env
+
+# Ignore database yaml if you keep secrets outside
+/config/database.yml
+
+# Ignore bootsnap cache
+tmp/cache/
+tmp/bootsnap-*
+
+# Ignore Rails cache
+tmp/cache/
+
+# Ignore compiled assets
+public/assets
+public/packs
+public/packs-test
+public/packs-dev
+
+# Ignore node modules
+/node_modules
+
+# Ignore Yarn integrity file
+/.yarn-integrity
+
+# Ignore byebug command history file.
+.byebug_history
+
+# Ignore sqlite databases
+*.sqlite3
+*.sqlite3-journal
+
+# Ignore spring files
+.spring
+
+# Ignore system test screenshots
+/tmp/screenshots
+
+# Ignore vscode settings
+.vscode
+
+# Ignore Mac files
+.DS_Store
+
+# Ignore swap files
+*.swp

@@ -1,0 +1,40 @@
+<div class="weather-container">
+
+  <h1 class="weather-title">Weather Forecast</h1>
+
+  <div class="weather-form">
+    <form action="/forecast" method="post" data-turbo="false">
+      <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+
+      <input type="text" name="address" value="<%= params[:address] %>">
+      <button type="submit">Search Again</button>
+    </form>
+  </div>
+
+  <% if @forecast.present? %>
+    <div class="weather-card">
+
+    <p>
+      <strong>Location:</strong>
+      <%= @forecast[:location][:city] %>
+      (<%= @forecast[:location][:lat] %>, <%= @forecast[:location][:lon] %>)
+    </p>
+
+      <% icon = @forecast.dig(:current_weather, :icon) %>
+
+      <% if icon.present? %>
+        <img class="weather-icon"
+        src="https://openweathermap.org/img/wn/<%= icon %>@2x.png">
+      <% end %>
+
+      <h2 class="value"><%= @forecast[:current_weather][:temp] %>°C</h2>
+      
+      <p class="label">Feels Like: <%= @forecast[:current_weather][:feels_like] %>°C</p>
+      <p class="label">Humidity: <%= @forecast[:current_weather][:humidity] %>%</p>
+      <p class="label">Condition: <%= @forecast[:current_weather][:condition].capitalize %></p>
+      <p class="label">MaxTemperature: <%= @forecast[:current_weather][:max_temp] %></p>
+
+    </div>
+  <% end %>
+
+</div>
