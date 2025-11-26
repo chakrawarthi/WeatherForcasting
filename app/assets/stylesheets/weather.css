@@ -62,3 +62,18 @@
   color: #666;
   font-size: 14px;
 }
+.location-btn {
+  display: block;
+  margin: 10px auto 0;
+  padding: 10px 20px;
+  background-color: #2296f3;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.location-btn:hover {
+  background-color: #1976d2;
+}

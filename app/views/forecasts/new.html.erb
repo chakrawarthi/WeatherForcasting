@@ -10,5 +10,23 @@
       <button type="submit">Get Weather</button>
     </form>
   </div>
+<button id="getLocation" class="location-btn">Use My Current Location</button>
+<script>
+document.getElementById("getLocation").addEventListener("click", () => {
+  if (!navigator.geolocation) {
+    alert("Geolocation is not supported by your browser.");
+    return;
+  }
 
+  navigator.geolocation.getCurrentPosition((pos) => {
+    const lat = pos.coords.latitude;
+    const lon = pos.coords.longitude;
+
+    // redirect to forecasts#show but send lat & lon
+    window.location.href = `/forecast?lat=${lat}&lon=${lon}`;
+  }, () => {
+    alert("Unable to get your location.");
+  });
+});
+</script>
 </div>

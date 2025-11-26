@@ -16,8 +16,9 @@
 /config/credentials.yml.enc
 
 # Ignore environment variables file
-.env
-
+# .env
+log/
+tmp/
 # Ignore database yaml if you keep secrets outside
 /config/database.yml
 
